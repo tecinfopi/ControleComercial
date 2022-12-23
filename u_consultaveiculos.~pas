@@ -1,0 +1,57 @@
+unit u_consultaveiculos;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Grids, DBGrids, RxDBCtrl, Buttons, StdCtrls, ExtCtrls, ACBrBase,
+  ACBrEnterTab;
+
+type
+  Tfrmlocveiculo = class(TForm)
+    edpesquisa: TEdit;
+    BitBtn1: TBitBtn;
+    Label1: TLabel;
+    RxDBGrid1: TRxDBGrid;
+    ACBrEnterTab1: TACBrEnterTab;
+    procedure BitBtn1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmlocveiculo: Tfrmlocveiculo;
+
+implementation
+
+uses
+  u_principal, u_conveiculo, u_database, u_dmbasedados;
+
+{$R *.dfm}
+
+procedure Tfrmlocveiculo.BitBtn1Click(Sender: TObject);
+begin
+if  edpesquisa.Text = '' then
+  begin
+  ShowMessage('Digite algo para consultar...');
+  edpesquisa.SetFocus;
+  Abort;
+  end
+  else
+  begin
+  with DmBasedados.QryConVei do
+  begin
+   Close;
+    SQL.Clear;
+    SQL.Add('Select * from veiculos where NOME LIKE ' + QuotedStr( '%' + edPesquisa.Text + '%' ));
+     ExecSQL;
+     Open;
+    if DmBasedados.QryConVei.RecordCount = 0 then
+    ShowMessage('Registro não encontrado....');
+  edPesquisa.SetFocus;
+end;
+end;
+end;
+end.
