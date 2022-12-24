@@ -27,14 +27,8 @@ type
     DSgrupos: TDataSource;
     QryConGrup: TZQuery;
     DSConGrup: TDataSource;
-    QryCadUsers: TZQuery;
-    DSCadUsers: TDataSource;
-    QryCadUsersID_USER: TIntegerField;
-    QryCadUsersNOME: TStringField;
-    QryCadUsersLOGIN: TStringField;
-    QryCadUsersSENHA: TStringField;
-    QryCadUsersDATA: TDateField;
-    QryCadUsersOBS: TStringField;
+    QryCadUser: TZQuery;
+    DSCadUser: TDataSource;
   private
     { Private declarations }
   public

@@ -1,11 +1,11 @@
 object frmcadusuarios: Tfrmcadusuarios
-  Left = 497
-  Top = 254
+  Left = 662
+  Top = 214
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Cadastros de Usu'#225'rios'
   ClientHeight = 282
-  ClientWidth = 458
+  ClientWidth = 454
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -22,7 +22,7 @@ object frmcadusuarios: Tfrmcadusuarios
   object pgc1: TPageControl
     Left = 0
     Top = 0
-    Width = 458
+    Width = 454
     Height = 282
     ActivePage = ts1
     Align = alBottom
@@ -32,7 +32,7 @@ object frmcadusuarios: Tfrmcadusuarios
       object rxwzrdhdr1: TRxWizardHeader
         Left = 0
         Top = 0
-        Width = 450
+        Width = 446
         Height = 41
         CaptionFont.Charset = DEFAULT_CHARSET
         CaptionFont.Color = clWindowText
@@ -119,7 +119,7 @@ object frmcadusuarios: Tfrmcadusuarios
       object Pnlbotoes: TPanel
         Left = 0
         Top = 220
-        Width = 450
+        Width = 446
         Height = 34
         Align = alBottom
         BevelOuter = bvNone
@@ -200,6 +200,7 @@ object frmcadusuarios: Tfrmcadusuarios
           Caption = '&Alterar'
           Enabled = False
           TabOrder = 1
+          OnClick = BtnAlterarClick
           Glyph.Data = {
             F6060000424DF606000000000000360000002800000018000000180000000100
             180000000000C006000000000000000000000000000000000000FFFFFFFFFFFF
@@ -394,7 +395,7 @@ object frmcadusuarios: Tfrmcadusuarios
       object Panel1: TPanel
         Left = 0
         Top = 41
-        Width = 450
+        Width = 446
         Height = 179
         Align = alClient
         BevelOuter = bvNone
@@ -451,7 +452,7 @@ object frmcadusuarios: Tfrmcadusuarios
         object Panel2: TPanel
           Left = 0
           Top = 177
-          Width = 450
+          Width = 446
           Height = 2
           Align = alBottom
           BevelOuter = bvLowered
@@ -465,7 +466,7 @@ object frmcadusuarios: Tfrmcadusuarios
           TabOrder = 1
         end
         object Edtcodigo: TEdit
-          Left = 71
+          Left = 65
           Top = 11
           Width = 58
           Height = 19
@@ -476,7 +477,7 @@ object frmcadusuarios: Tfrmcadusuarios
           TabOrder = 2
         end
         object Edtnome: TEdit
-          Left = 71
+          Left = 65
           Top = 44
           Width = 352
           Height = 19
@@ -486,7 +487,7 @@ object frmcadusuarios: Tfrmcadusuarios
           TabOrder = 3
         end
         object Edtlogin: TEdit
-          Left = 71
+          Left = 65
           Top = 79
           Width = 121
           Height = 19
@@ -496,12 +497,13 @@ object frmcadusuarios: Tfrmcadusuarios
           TabOrder = 4
         end
         object Edtsenha: TEdit
-          Left = 71
+          Left = 65
           Top = 111
           Width = 121
           Height = 19
           CharCase = ecUpperCase
           Ctl3D = False
+          MaxLength = 6
           ParentCtl3D = False
           PasswordChar = '#'
           TabOrder = 5
@@ -509,10 +511,11 @@ object frmcadusuarios: Tfrmcadusuarios
         object Edtconfirmar: TEdit
           Left = 271
           Top = 111
-          Width = 152
+          Width = 117
           Height = 19
           CharCase = ecUpperCase
           Ctl3D = False
+          MaxLength = 6
           ParentCtl3D = False
           PasswordChar = '#'
           TabOrder = 6
@@ -520,23 +523,21 @@ object frmcadusuarios: Tfrmcadusuarios
         object Edtobs: TEdit
           Left = 272
           Top = 144
-          Width = 151
+          Width = 116
           Height = 19
           CharCase = ecUpperCase
           Ctl3D = False
           ParentCtl3D = False
           TabOrder = 8
         end
-        object Edtdata: TDateTimePicker
-          Left = 71
-          Top = 142
+        object Edtdata: TDateEdit
+          Left = 65
+          Top = 144
           Width = 121
-          Height = 21
-          BevelInner = bvNone
-          BevelOuter = bvNone
-          CalAlignment = dtaRight
-          Date = 44917.901725891210000000
-          Time = 44917.901725891210000000
+          Height = 19
+          Ctl3D = False
+          NumGlyphs = 2
+          ParentCtl3D = False
           TabOrder = 7
         end
       end
@@ -547,7 +548,7 @@ object frmcadusuarios: Tfrmcadusuarios
       object rxwzrdhdr2: TRxWizardHeader
         Left = 0
         Top = 0
-        Width = 450
+        Width = 446
         Height = 41
         CaptionFont.Charset = DEFAULT_CHARSET
         CaptionFont.Color = clWindowText
@@ -630,6 +631,125 @@ object frmcadusuarios: Tfrmcadusuarios
           E4B7AFBA9D91A09F919DA1939D968B9BA69FABD7D3D8FFFFFFFFFFFFFFFFFFFF
           FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
         BufferedDraw = False
+      end
+      object Label8: TLabel
+        Left = 8
+        Top = 48
+        Width = 88
+        Height = 13
+        Caption = 'Op'#231#245'es de Buscar'
+      end
+      object Label9: TLabel
+        Left = 176
+        Top = 48
+        Width = 126
+        Height = 13
+        Caption = 'Digite os Dados da Buscar'
+      end
+      object ComboBox1: TComboBox
+        Left = 1
+        Top = 69
+        Width = 145
+        Height = 21
+        Ctl3D = False
+        ItemHeight = 13
+        ParentCtl3D = False
+        TabOrder = 0
+        Items.Strings = (
+          '1 - Por C'#243'digo'
+          '2 - Por Nome'
+          '3 - Por Data')
+      end
+      object Edtpesquisar: TEdit
+        Left = 150
+        Top = 69
+        Width = 189
+        Height = 19
+        CharCase = ecUpperCase
+        Ctl3D = False
+        ParentCtl3D = False
+        TabOrder = 1
+      end
+      object BtnBuscar: TBitBtn
+        Left = 350
+        Top = 50
+        Width = 90
+        Height = 38
+        Caption = '&Buscar'
+        TabOrder = 2
+        Glyph.Data = {
+          F6060000424DF606000000000000360000002800000018000000180000000100
+          180000000000C006000000000000000000000000000000000000FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFCCD2E2B9BDCFD8D1D7FF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC8D0E1285A
+          9F2B5899626F8DABA2AEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          C8D1E3285EA55BD3F977DBF426589F707B9BFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFC8D2E52963AC5BD5FA7EE3FA45AFF11879DE255099FFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFC9D4E72967B45CD5FA7FE3FA45AFF1177FE41F5AADC9
+          D4E5FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC9D5E9296CBA5CD5FC7FE3FA44AFF1177F
+          E41F5EB6C9D5E9FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC9D6EA2971C15CD5FC7EE3FA
+          44AFF1177FE41F63BDC9D6EAFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFF7F6F7E7E5E6E6E5E6F4F3F3FFFFFFFFFFFFFFFFFFFFFFFF447DC551
+          C3F47EE3FA44AFEF177FE41F67C3C9D8ECFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFDFCFCB6B2B66A636C483F48564950534952453B455C545CA8A3A8F7F7
+          F7EFEDF1B4C2D52E79C83DA2E91780E41F6CC8C9D9EDFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFEFEEEF6C646E66574AAD9D6FFBDCACFFE6C4FFEECDFFF5CC
+          C0C8A6606263483C4871647F9CA1B691A9BC2372CB1F70D2C9DBF1FFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFEFEEEF5D56618E7753F2C18FFFCFA9FFD6B3FF
+          E6C9FFEDD0FFF2D3FFF8D8FFFCDF97ACA6453B45726374C8C1CBE0EEFAD4E3F5
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7A737E8D734FEAB486F5BC
+          91F6BD91FFD8B6FFE8CDFFEED2FFF3D7FFF9E0FFFDE9FFFEF095AEAD463C49CD
+          C9CDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFC9C6CB6F5C51
+          DAA574EDB489E2A97EF8BF93FFDAB9FFE7CDFFEED5FFF4DAFFF9E3FFFDEFFFFE
+          F7FFFEEE6B7175A5A1A7FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFF8F8792A07F52E1A87DDBA277DDA479F6BD92FFD7B5FFE7CEFFEDD4FFF2DA
+          FFF7E1FFFAE7FFFDEDFFFCE7CCD6C05D555FFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFF706471C4905DDDA479D39A6FF8BF94FFD0ACFFDABCFF
+          EBD8FFEBD4FFEED7FFF4DDFFF7E1FFF8E1FFF9DEFFFAD75D525FF0F0F1FFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7C6A78C0895BDAA176EFB68BDAA1
+          76E5AC81FDC498FFDCBDFFEFE0FFECD5FFEED6FFF2DAFFF4DAFFF3D8FFF2CF7D
+          7179D6D5D8FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7E7181BE8759
+          D89F74E4AB80FFCCA5FFE1CBFFDBBFFFCCA4FFDFC3FFECDBFFE9D1FFECD3FFED
+          D3FFEDD1FFEFCE7F767BDAD8DBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFF827788BF8857D0976CF3BA8FFFE1CBFFEEE2FFF9F5FFDABDFFCBA3FFE6D1
+          FFE4CBFFE5CBFFE7CDFFE7CCFFECC26A5E6BF1F1F2FFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFA8A0ACA68053CB9267EBB287FFD9BBFFEADAFFF1E7FF
+          DEC5F1B88DFFDBBFFFCCA3FED3AEFFD8B6FFDDC0D3C594796F7CFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFDFDCE08B776FBF8656D9A075FCC3
+          98FFDCC2FFE5D2FFCCA5FBC297FCC398ECB388F3BA8EFFC99EFCD1A08C8171BC
+          B8BEFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFABA4AF
+          9D7E5CC0885CDBA277EEB58AFBC297F6BD92EEB58AD1986DDDA479F1B88DF4BE
+          91B09F77847A89FCFDFDFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFAFAFA9C929FA0825FBF8857CD9469D69D72DDA479DBA277E3AA7F
+          EAB186DFAC7BAB976F857988E9E8EBFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFAFAFAB2ABB598867DAD875AC38C5BBC
+          8558C28B5DCF9967BA9668958475968F9BEDECEFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFE4E0
+          E4B7AFBA9D91A09F919DA1939D968B9BA69FABD7D3D8FFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
+      end
+      object DBGrid1: TDBGrid
+        Left = 0
+        Top = 93
+        Width = 446
+        Height = 161
+        Align = alBottom
+        Ctl3D = False
+        DataSource = DmBasedados.DSCadUser
+        ParentCtl3D = False
+        TabOrder = 3
+        TitleFont.Charset = DEFAULT_CHARSET
+        TitleFont.Color = clWindowText
+        TitleFont.Height = -11
+        TitleFont.Name = 'MS Sans Serif'
+        TitleFont.Style = []
       end
     end
   end

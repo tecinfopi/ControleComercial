@@ -118,41 +118,17 @@ object DmBasedados: TDmBasedados
     Left = 152
     Top = 320
   end
-  object QryCadUsers: TZQuery
+  object QryCadUser: TZQuery
     Connection = Xerife
-    Active = True
+    SQL.Strings = (
+      '')
     Params = <>
-    Properties.Strings = (
-      'Select * from usuarios')
-    Left = 80
-    Top = 384
-    object QryCadUsersID_USER: TIntegerField
-      FieldName = 'ID_USER'
-      Required = True
-    end
-    object QryCadUsersNOME: TStringField
-      FieldName = 'NOME'
-      Size = 30
-    end
-    object QryCadUsersLOGIN: TStringField
-      FieldName = 'LOGIN'
-      Size = 15
-    end
-    object QryCadUsersSENHA: TStringField
-      FieldName = 'SENHA'
-      Size = 6
-    end
-    object QryCadUsersDATA: TDateField
-      FieldName = 'DATA'
-    end
-    object QryCadUsersOBS: TStringField
-      FieldName = 'OBS'
-      Size = 15
-    end
+    Left = 72
+    Top = 392
   end
-  object DSCadUsers: TDataSource
-    DataSet = QryCadUsers
-    Left = 152
-    Top = 384
+  object DSCadUser: TDataSource
+    DataSet = QryCadUser
+    Left = 144
+    Top = 392
   end
 end

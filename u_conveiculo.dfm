@@ -1,11 +1,11 @@
 object frmconveiculo: Tfrmconveiculo
-  Left = 224
-  Top = 207
+  Left = 345
+  Top = 243
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Cadastros / Consulta de Lan'#231'amentos.'
-  ClientHeight = 351
-  ClientWidth = 461
+  ClientHeight = 326
+  ClientWidth = 462
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -23,7 +23,7 @@ object frmconveiculo: Tfrmconveiculo
   object PageControl1: TPageControl
     Left = 0
     Top = 0
-    Width = 461
+    Width = 462
     Height = 313
     ActivePage = TabSheet1
     Align = alTop
@@ -33,7 +33,7 @@ object frmconveiculo: Tfrmconveiculo
       object RxWizardHeader1: TRxWizardHeader
         Left = 0
         Top = 0
-        Width = 453
+        Width = 454
         Height = 73
         CaptionFont.Charset = DEFAULT_CHARSET
         CaptionFont.Color = clWindowText
@@ -268,7 +268,7 @@ object frmconveiculo: Tfrmconveiculo
       object RxWizardHeader2: TRxWizardHeader
         Left = 0
         Top = 0
-        Width = 453
+        Width = 454
         Height = 73
         CaptionFont.Charset = DEFAULT_CHARSET
         CaptionFont.Color = clWindowText
@@ -393,7 +393,7 @@ object frmconveiculo: Tfrmconveiculo
         Left = 8
         Top = 141
         Width = 433
-        Height = 28
+        Height = 19
         Ctl3D = False
         Font.Charset = ANSI_CHARSET
         Font.Color = clBlack
@@ -529,7 +529,7 @@ object frmconveiculo: Tfrmconveiculo
       object DBGrid1: TDBGrid
         Left = 0
         Top = 172
-        Width = 453
+        Width = 454
         Height = 113
         Align = alBottom
         Ctl3D = False
@@ -578,8 +578,8 @@ object frmconveiculo: Tfrmconveiculo
   end
   object Panel1: TPanel
     Left = 0
-    Top = 311
-    Width = 461
+    Top = 286
+    Width = 462
     Height = 40
     Align = alBottom
     BevelInner = bvLowered

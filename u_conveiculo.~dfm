@@ -1,6 +1,6 @@
 object frmconveiculo: Tfrmconveiculo
-  Left = 224
-  Top = 207
+  Left = 143
+  Top = 190
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Cadastros / Consulta de Lan'#231'amentos.'
@@ -393,7 +393,7 @@ object frmconveiculo: Tfrmconveiculo
         Left = 8
         Top = 141
         Width = 433
-        Height = 28
+        Height = 19
         Ctl3D = False
         Font.Charset = ANSI_CHARSET
         Font.Color = clBlack
