@@ -15,7 +15,8 @@ uses
   u_login in 'u_login.pas' {frmlogin},
   u_cadusuarios in 'u_cadusuarios.pas' {frmcadusuarios},
   U_lancabastecimento in 'U_lancabastecimento.pas' {frmlancabastecimento},
-  U_cadgrupos in 'U_cadgrupos.pas' {frmcadgrupos};
+  U_cadgrupos in 'U_cadgrupos.pas' {frmcadgrupos},
+  U_RelGrupos in 'U_RelGrupos.pas' {FrmRelGrupos};
 
 {$R *.res}
 
@@ -39,6 +40,7 @@ begin
   Application.CreateForm(TDmBasedados, DmBasedados);
   Application.CreateForm(Tfrmlogin, frmlogin);
   Application.CreateForm(Tfrmprincipal, frmprincipal);
+  Application.CreateForm(TFrmRelGrupos, FrmRelGrupos);
   // altera a ProgressBar
     frmabertura.Gauge1.Progress := 10;
     // espera...

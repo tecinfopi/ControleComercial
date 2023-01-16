@@ -42,6 +42,7 @@ type
     procedure RxDBGrid1CellClick(Column: TColumn);
     procedure BtnExcluirClick(Sender: TObject);
     procedure BtnImprimirClick(Sender: TObject);
+    procedure FormActivate(Sender: TObject);
   private
     { Private declarations }
     procedure habilitarbotoes;
@@ -102,16 +103,17 @@ if  Edtnome.Text = '' then
   with DmBasedados.QryGrupos do
   begin
     Close;
+    SQL.Clear;
     SQL.Add('INSERT INTO grupos');
     SQL.Add('(DESCRICAO, OBS, DATA)');
     SQL.Add('values (:pdescricao, :pobs, :pdata)');
-    ParamByName('pdata').AsDateTime := StrToDate(Edtdata.Text);
+    ParamByName('pdata').AsDate := StrToDate(Edtdata.Text);
     ParamByName('pdescricao').AsString := Edtnome.Text;
     ParamByName('pobs').AsString := EdtObs.Text;
     ExecSQL;
     ShowMessage('Registro inserido com sucesso....');
     limparedits;
-    habilitarbotoes;
+    //habilitarbotoes;
     //PageControl1.ActivePage := TabSheet2;
   end;
 end;
@@ -183,6 +185,8 @@ begin
      SQL.Clear;
      SQL.Add('delete from grupos where id_grupo = :id_grupo');
      ParamByName('id_grupo').AsInteger := StrToInt(Edtcodigo.Text);
+     if Application.MessageBox('Deseja Realmente Fechar','C O N F I R M A Ç Ã O...',MB_YESNOCANCEL + MB_ICONINFORMATION + MB_DEFBUTTON2) = IdYes then
+     Exit;
       try
         ExecSQL;
          ShowMessage('Excluido com seucesso');
@@ -198,6 +202,11 @@ end;
 procedure Tfrmcadgrupos.BtnImprimirClick(Sender: TObject);
 begin
   FrmRelGrupos.RLReport1.Preview;
+end;
+
+procedure Tfrmcadgrupos.FormActivate(Sender: TObject);
+begin
+  Edtnome.SetFocus;
 end;
 
 end.

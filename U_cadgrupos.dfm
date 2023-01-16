@@ -16,6 +16,7 @@ object frmcadgrupos: Tfrmcadgrupos
   KeyPreview = True
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnActivate = FormActivate
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 13
@@ -490,9 +491,9 @@ object frmcadgrupos: Tfrmcadgrupos
         object Label6: TLabel
           Left = 48
           Top = 141
-          Width = 29
+          Width = 25
           Height = 13
-          Caption = 'Data.:'
+          Caption = 'Obs.:'
         end
         object Edtcodigo: TEdit
           Left = 114

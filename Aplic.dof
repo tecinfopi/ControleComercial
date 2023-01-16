@@ -111,11 +111,11 @@ ProjectLang=
 RootDir=
 [Version Info]
 IncludeVerInfo=1
-AutoIncBuild=0
+AutoIncBuild=1
 MajorVer=1
 MinorVer=0
 Release=0
-Build=0
+Build=2
 Debug=1
 PreRelease=1
 Special=1
@@ -126,7 +126,7 @@ CodePage=1252
 [Version Info Keys]
 CompanyName=Orion System Ltda
 FileDescription=SysCon - Aplic
-FileVersion=1.0.0.0
+FileVersion=1.0.0.2
 InternalName=SysCon - Aplic
 LegalCopyright=Orion System Ltda
 LegalTrademarks=
@@ -153,6 +153,9 @@ C:\Program Files (x86)\FastReport 6 VCL Enterprise\LibD7\dclfsADO7.bpl=FastScrip
 C:\Program Files (x86)\FastReport 6 VCL Enterprise\LibD7\dclfrxDBX7.bpl=FastReport 6.0 DBX Components
 C:\Program Files (x86)\FastReport 6 VCL Enterprise\LibD7\dclfrxIBX7.bpl=FastReport 6.0 IBX Components
 C:\Program Files (x86)\FastReport 6 VCL Enterprise\LibD7\dclfsIBX7.bpl=FastScript 1.9 IBX Components
+C:\DataSoft\Componentes\User\trunk\Lib\Delphi\LibD7\pckUserControl_RT.bpl=SWDelphi - User Control RT
+C:\DataSoft\Componentes\User\trunk\Lib\Delphi\LibD7\pckUserControl_DT.bpl=SWDelphi - User Control
+C:\DataSoft\Componentes\User\trunk\Lib\Delphi\LibD7\pckHistorico.bpl=SWDelphi - User Control Historico
 [HistoryLists\hlUnitAliases]
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;

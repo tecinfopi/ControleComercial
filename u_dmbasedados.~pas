@@ -29,6 +29,12 @@ type
     DSConGrup: TDataSource;
     QryCadUser: TZQuery;
     DSCadUser: TDataSource;
+    QryGruposID_GRUPO: TIntegerField;
+    QryGruposDESCRICAO: TStringField;
+    QryGruposOBS: TStringField;
+    QryGruposDATA: TDateField;
+    QryConUser: TZQuery;
+    DSConUser: TDataSource;
   private
     { Private declarations }
   public

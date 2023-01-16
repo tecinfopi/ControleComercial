@@ -1,7 +1,7 @@
 object DmBasedados: TDmBasedados
   OldCreateOrder = False
-  Left = 433
-  Top = 131
+  Left = 479
+  Top = 182
   Height = 512
   Width = 479
   object Xerife: TZConnection
@@ -99,6 +99,22 @@ object DmBasedados: TDmBasedados
     Params = <>
     Left = 80
     Top = 248
+    object QryGruposID_GRUPO: TIntegerField
+      AutoGenerateValue = arAutoInc
+      FieldName = 'ID_GRUPO'
+      ReadOnly = True
+    end
+    object QryGruposDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Size = 30
+    end
+    object QryGruposOBS: TStringField
+      FieldName = 'OBS'
+      Size = 50
+    end
+    object QryGruposDATA: TDateField
+      FieldName = 'DATA'
+    end
   end
   object DSgrupos: TDataSource
     DataSet = QryGrupos
@@ -130,5 +146,18 @@ object DmBasedados: TDmBasedados
     DataSet = QryCadUser
     Left = 144
     Top = 392
+  end
+  object QryConUser: TZQuery
+    Connection = Xerife
+    SQL.Strings = (
+      'Select * from usuarios')
+    Params = <>
+    Left = 224
+    Top = 8
+  end
+  object DSConUser: TDataSource
+    DataSet = QryConUser
+    Left = 288
+    Top = 8
   end
 end

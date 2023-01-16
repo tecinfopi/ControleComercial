@@ -16,6 +16,7 @@ object frmcadgrupos: Tfrmcadgrupos
   KeyPreview = True
   OldCreateOrder = False
   Position = poDesktopCenter
+  OnActivate = FormActivate
   OnKeyPress = FormKeyPress
   PixelsPerInch = 96
   TextHeight = 13
@@ -24,7 +25,7 @@ object frmcadgrupos: Tfrmcadgrupos
     Top = 0
     Width = 473
     Height = 322
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     Align = alClient
     TabOrder = 0
     object TabSheet1: TTabSheet
@@ -490,9 +491,9 @@ object frmcadgrupos: Tfrmcadgrupos
         object Label6: TLabel
           Left = 48
           Top = 141
-          Width = 29
+          Width = 25
           Height = 13
-          Caption = 'Data.:'
+          Caption = 'Obs.:'
         end
         object Edtcodigo: TEdit
           Left = 114

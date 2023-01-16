@@ -70,7 +70,6 @@ type
     QryLancamentosPROXIMOKM: TStringField;
     QryLancamentosIDVEICULO: TIntegerField;
     SpeedButton1: TSpeedButton;
-    img1: TImage;
     SpeedButton5: TSpeedButton;
     Panel2: TPanel;
     Image2: TImage;

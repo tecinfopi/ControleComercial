@@ -37,7 +37,7 @@ type
     BitBtn4: TBitBtn;
     Edtdata: TDateEdit;
     Label8: TLabel;
-    ComboBox1: TComboBox;
+    cb: TComboBox;
     Label9: TLabel;
     Edtpesquisar: TEdit;
     BtnBuscar: TBitBtn;
@@ -47,6 +47,8 @@ type
     procedure FormActivate(Sender: TObject);
     procedure BtnsalvarClick(Sender: TObject);
     procedure BtnAlterarClick(Sender: TObject);
+    procedure BtnExcluirClick(Sender: TObject);
+    procedure BtnBuscarClick(Sender: TObject);
   private
     { Private declarations }
     procedure habilitarbotoes;
@@ -157,6 +159,55 @@ begin
       end;
    end;
 
+end;
+
+procedure Tfrmcadusuarios.BtnExcluirClick(Sender: TObject);
+begin
+with DmBasedados.QryUser do
+   begin
+
+     Close;
+     SQL.Clear;
+     SQL.Add('delete from usuarios where id_user = :id_user');
+     ParamByName('id_user').AsInteger := StrToInt(Edtcodigo.Text);
+     if Application.MessageBox('Deseja Realmente Fechar','C O N F I R M A Ç Ã O...',MB_YESNOCANCEL + MB_ICONINFORMATION + MB_DEFBUTTON2) = IdYes then
+     Exit;
+      try
+        ExecSQL;
+         ShowMessage('Excluido com seucesso');
+      except on E:Exception do
+        ShowMessage('Erro ao Excluir o registro');
+      end;
+   end;
+ //PageControl1.ActivePage := TabSheet2;
+ //btnlocalizarClick(sender);
+ limparedits;
+end;
+
+procedure Tfrmcadusuarios.BtnBuscarClick(Sender: TObject);
+begin
+  with DmBasedados.QryConUser do
+  begin
+    Close;
+    SQL.Clear;
+     case cb.ItemIndex of
+     0: begin
+         SQL.Add('Select * from usuarios where id_user = ' + edtPesquisar.Text);
+        end;
+     1: begin
+         SQL.Add('Select * from usuarios where NOME LIKE ' + QuotedStr( '%' + edtPesquisar.Text + '%' ));
+        end;
+     3: begin
+        SQL.Add('Select * from USUARIOS');
+     end;
+     end;
+
+     //SQL.Text
+     Open;
+     if DmBasedados.QryGrupos.Active then
+     if DmBasedados.QryGrupos.RecordCount = 0 then
+     ShowMessage('Registro não encontrado....');
+    end;
 end;
 
 end.

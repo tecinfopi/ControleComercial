@@ -267,6 +267,7 @@ object frmcadusuarios: Tfrmcadusuarios
           Caption = '&Excluir'
           Enabled = False
           TabOrder = 2
+          OnClick = BtnExcluirClick
           Glyph.Data = {
             F6060000424DF606000000000000360000002800000018000000180000000100
             180000000000C006000000000000000000000000000000000000FFFFFFFFFFFF
@@ -646,7 +647,7 @@ object frmcadusuarios: Tfrmcadusuarios
         Height = 13
         Caption = 'Digite os Dados da Buscar'
       end
-      object ComboBox1: TComboBox
+      object cb: TComboBox
         Left = 1
         Top = 69
         Width = 145
@@ -658,7 +659,7 @@ object frmcadusuarios: Tfrmcadusuarios
         Items.Strings = (
           '1 - Por C'#243'digo'
           '2 - Por Nome'
-          '3 - Por Data')
+          '3 - Todos')
       end
       object Edtpesquisar: TEdit
         Left = 150
@@ -677,6 +678,7 @@ object frmcadusuarios: Tfrmcadusuarios
         Height = 38
         Caption = '&Buscar'
         TabOrder = 2
+        OnClick = BtnBuscarClick
         Glyph.Data = {
           F6060000424DF606000000000000360000002800000018000000180000000100
           180000000000C006000000000000000000000000000000000000FFFFFFFFFFFF
@@ -742,7 +744,7 @@ object frmcadusuarios: Tfrmcadusuarios
         Height = 161
         Align = alBottom
         Ctl3D = False
-        DataSource = DmBasedados.DSCadUser
+        DataSource = DmBasedados.DSConUser
         ParentCtl3D = False
         TabOrder = 3
         TitleFont.Charset = DEFAULT_CHARSET

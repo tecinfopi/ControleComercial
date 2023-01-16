@@ -40,7 +40,6 @@ begin
   Application.CreateForm(TDmBasedados, DmBasedados);
   Application.CreateForm(Tfrmlogin, frmlogin);
   Application.CreateForm(Tfrmprincipal, frmprincipal);
-  Application.CreateForm(TFrmRelGrupos, FrmRelGrupos);
   // altera a ProgressBar
     frmabertura.Gauge1.Progress := 10;
     // espera...
